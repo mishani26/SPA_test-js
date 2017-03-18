@@ -22,11 +22,8 @@ var _signRequest = function(context, request, web_api_id, web_api_key, web_api_s
     request.setRequestHeader('Authorization', 'HMAC ' + web_api_id + ':' + web_api_key + ':' + timestamp + ':' + CryptoJS.enc.Base64.stringify(hash));
 };
 
-var TickTraderWebClient = function(web_api_address, web_api_id, web_api_key, web_api_secret) {
-    if (!web_api_address)
-        throw "TickTrader Web API address should be valid!";
-
-    this.web_api_address = web_api_address;
+var TickTraderWebClient = function( web_api_id, web_api_key, web_api_secret) {
+    this.web_api_address = "https://ttdemowebapi.soft-fx.com:8443";
     this.web_api_id = web_api_id;
     this.web_api_key = web_api_key;
     this.web_api_secret = web_api_secret;
